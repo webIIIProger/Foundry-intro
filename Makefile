@@ -45,6 +45,8 @@ endif
 
 deploy-sepolia:
 	@forge script script/DeployFundMe.s.sol:DeployFundMe $(NETWORK_ARGS)
+verify-sepolia:
+	@forge script script/DeployFundMe.s.sol:DeployFundMe $(NETWORK_ARGS) --verify --etherscan-api-key $(ETHERSCAN_API_KEY) -vvvv
 
 # As of writing, the Alchemy zkSync RPC URL is not working correctly 
 deploy-zk:
